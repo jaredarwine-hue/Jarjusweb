@@ -5,6 +5,8 @@ import { BUSINESS } from "../../data/site";
 const NAV = [
   { label: "Services", href: "#services", testId: "header-nav-services" },
   { label: "Pricing", href: "#pricing", testId: "header-nav-pricing" },
+  { label: "Seasonal", href: "#seasonal", testId: "header-nav-seasonal" },
+  { label: "Gallery", href: "#gallery", testId: "header-nav-gallery" },
   { label: "Service Area", href: "#service-area", testId: "header-nav-service-area" },
   { label: "Reviews", href: "#reviews", testId: "header-nav-testimonials" },
 ];

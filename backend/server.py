@@ -1,5 +1,6 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, Header, HTTPException
 from dotenv import load_dotenv
+import hmac
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
@@ -47,6 +48,7 @@ class QuoteRequest(BaseModel):
     lot_size: str
     town: Optional[str] = ""
     message: Optional[str] = ""
+    status: str = "new"
     created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
 class QuoteCreate(BaseModel):
@@ -55,6 +57,20 @@ class QuoteCreate(BaseModel):
     lot_size: str
     town: Optional[str] = ""
     message: Optional[str] = ""
+
+QUOTE_STATUSES = {"new", "contacted", "booked", "closed"}
+
+class QuoteStatusUpdate(BaseModel):
+    status: str
+
+class InboxLogin(BaseModel):
+    password: str
+
+
+def require_inbox_key(x_inbox_key: Optional[str] = Header(default=None)):
+    expected = os.environ['INBOX_PASSWORD']
+    if not x_inbox_key or not hmac.compare_digest(x_inbox_key, expected):
+        raise HTTPException(status_code=401, detail="Unauthorized")
 
 
 # Add your routes to the router instead of directly to app
@@ -87,10 +103,36 @@ async def create_quote(input: QuoteCreate):
     logger.info(f"New quote request from {quote.name} ({quote.phone}) - {quote.lot_size}")
     return quote
 
+@api_router.post("/inbox/login")
+async def inbox_login(input: InboxLogin):
+    require_inbox_key(input.password)
+    return {"ok": True}
+
 @api_router.get("/quotes", response_model=List[QuoteRequest])
-async def get_quotes():
+async def get_quotes(x_inbox_key: Optional[str] = Header(default=None)):
+    require_inbox_key(x_inbox_key)
     quotes = await db.quotes.find({}, {"_id": 0}).sort("created_at", -1).to_list(1000)
     return quotes
+
+@api_router.patch("/quotes/{quote_id}", response_model=QuoteRequest)
+async def update_quote_status(quote_id: str, input: QuoteStatusUpdate, x_inbox_key: Optional[str] = Header(default=None)):
+    require_inbox_key(x_inbox_key)
+    if input.status not in QUOTE_STATUSES:
+        raise HTTPException(status_code=400, detail="Invalid status")
+    res = await db.quotes.find_one_and_update(
+        {"id": quote_id}, {"$set": {"status": input.status}}, projection={"_id": 0}, return_document=True
+    )
+    if not res:
+        raise HTTPException(status_code=404, detail="Quote not found")
+    return res
+
+@api_router.delete("/quotes/{quote_id}")
+async def delete_quote(quote_id: str, x_inbox_key: Optional[str] = Header(default=None)):
+    require_inbox_key(x_inbox_key)
+    res = await db.quotes.delete_one({"id": quote_id})
+    if res.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="Quote not found")
+    return {"ok": True}
 
 
 # Include the router in the main app

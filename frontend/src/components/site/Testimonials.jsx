@@ -1,5 +1,5 @@
 import { Star, ArrowUpRight } from "lucide-react";
-import { REVIEW_URL, IMAGES, BUSINESS } from "../../data/site";
+import { REVIEW_URL, IMAGES, BUSINESS, RATING } from "../../data/site";
 import { Reveal } from "./Reveal";
 
 export const Testimonials = () => {
@@ -10,12 +10,23 @@ export const Testimonials = () => {
       </div>
       <div className="relative mx-auto max-w-3xl px-5 sm:px-8 text-center">
         <Reveal>
-          <div className="flex justify-center gap-1.5 mb-7" aria-label="Five star rated">
-            {[0, 1, 2, 3, 4].map((i) => (
-              <Star key={i} size={22} className="fill-gold text-gold" />
-            ))}
+          <div
+            data-testid="google-rating-badge"
+            className="inline-flex items-center gap-3 rounded-full border border-gold/40 bg-night/40 backdrop-blur-md pl-4 pr-5 py-2 mb-8"
+            aria-label={`Rated ${RATING.value} out of 5 on Google from ${RATING.count} reviews`}
+          >
+            <span className="grid place-items-center w-7 h-7 rounded-full bg-gold-light text-night font-sans text-sm font-bold" aria-hidden="true">G</span>
+            <span className="font-display text-2xl font-bold text-gold-light leading-none" data-testid="google-rating-value">{RATING.value}</span>
+            <span className="flex gap-0.5" aria-hidden="true">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <Star key={i} size={14} className="fill-gold text-gold" />
+              ))}
+            </span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-gold-light/70" data-testid="google-rating-count">
+              {RATING.count} Google reviews
+            </span>
           </div>
-          <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-gold">Reviews</span>
+          <span className="block font-mono text-[11px] uppercase tracking-[0.22em] text-gold">Reviews</span>
           <h2 className="mt-5 font-display text-4xl sm:text-5xl font-bold text-gold-light tracking-tight leading-tight">
             Neighbors across central Illinois trust their lawns to us.
           </h2>

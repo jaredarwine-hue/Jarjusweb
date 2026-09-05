@@ -15,6 +15,62 @@ export const BUSINESS = {
 // Real Google review link provided by the owner.
 export const REVIEW_URL = "https://g.page/r/CRi-e9wy46FdEBM/review";
 
+// Google rating shown next to the reviews button. Update by hand when it changes.
+export const RATING = { value: "5.0", count: 12 };
+
+// Seasonal / off-season services — quote-only, no listed prices.
+export const SEASONAL = [
+  {
+    id: "spring-cleanup",
+    season: "Spring",
+    title: "Spring tidy-up",
+    testId: "seasonal-card-spring-cleanup",
+    body: "Clear winter debris, first cut of the year, crisp edges re-established, beds raked out.",
+  },
+  {
+    id: "leaf-cleanup",
+    season: "Fall",
+    title: "Leaf cleanup",
+    testId: "seasonal-card-leaf-cleanup",
+    body: "Blowing, mulching, and haul-off of fallen leaves before they smother the turf.",
+  },
+  {
+    id: "fall-cleanup",
+    season: "Fall",
+    title: "Fall tidy-up",
+    testId: "seasonal-card-fall-cleanup",
+    body: "Final short cut, edging, and clean-out so the yard winters well and greens up early.",
+  },
+];
+
+// Before / after pairs. Swap these URLs for real job photos.
+export const GALLERY = [
+  {
+    id: "town-lot",
+    town: "Neoga, IL",
+    lot: "Town lot · under 1/4 acre",
+    testId: "gallery-item-town-lot",
+    before: "https://static.prod-images.emergentagent.com/jobs/9d6c3e44-7b6c-440b-b87d-3d47f2598e0b/images/ea3758a61277431c80680af6eeeb01577e6aec016fb56d848ed2962c79c08136.jpeg",
+    after: "https://static.prod-images.emergentagent.com/jobs/9d6c3e44-7b6c-440b-b87d-3d47f2598e0b/images/42b2e254b013266ad4609c46d2cd29d7481e2fd8d4b427b6fbcdcfb4c12ef018.jpeg",
+  },
+  {
+    id: "homestead",
+    town: "Effingham, IL",
+    lot: "Homestead · 1/2 acre",
+    testId: "gallery-item-homestead",
+    before: "https://static.prod-images.emergentagent.com/jobs/9d6c3e44-7b6c-440b-b87d-3d47f2598e0b/images/c5adeef4026d35265edc10772440c0d30985dc7b7e2d62f4c78c397661860a38.jpeg",
+    after: "https://static.prod-images.emergentagent.com/jobs/9d6c3e44-7b6c-440b-b87d-3d47f2598e0b/images/478a5ba3e7d039cd7fc5ef14477790f85797fc7b60d98c485cc16dd6d0682c08.jpeg",
+  },
+  {
+    id: "acreage",
+    town: "Mattoon, IL",
+    lot: "Country acreage · 1 acre",
+    testId: "gallery-item-acreage",
+    before: "https://static.prod-images.emergentagent.com/jobs/9d6c3e44-7b6c-440b-b87d-3d47f2598e0b/images/e7cc018f8d116e907128ebdb91344a98b229ae7fa13994667121d9cd78828d27.jpeg",
+    after: "https://static.prod-images.emergentagent.com/jobs/9d6c3e44-7b6c-440b-b87d-3d47f2598e0b/images/e8c5dc12b69ac66e1591acbd42ea50973ce9b34818e12b9c7d06a05d723b564e.jpeg",
+  },
+];
+
 export const IMAGES = {
   hero: "https://images.unsplash.com/photo-1642541744624-7a2a89545a32?crop=entropy&cs=srgb&fm=jpg&q=85&w=1800",
   mowing: "https://images.unsplash.com/photo-1780419748459-075ce111534a?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",

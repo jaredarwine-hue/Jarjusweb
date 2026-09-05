@@ -1,0 +1,219 @@
+{
+  "project_info": {
+    "name": "Jarjus Lawn Care LLC Marketing Platform",
+    "business_name": "Jarjus Lawn Care LLC",
+    "location": "3528 East 930 North, Neoga, IL 62447",
+    "phone": "(217) 294-2346",
+    "tagline": "Precision Turf & Agrarian Care across Neoga and Central Illinois",
+    "app_type": "marketing_site",
+    "theme": "light_agrarian_editorial"
+  },
+  "design_identity": {
+    "archetype": "Organic & Earthy + Swiss Editorial",
+    "description": "High-impact agrarian editorial design combining rich deep forest green, limestone bone neutrals, and solar wheat ochre accents. Emphasizes tactile craftsmanship, deep Midwest roots, and precise typography rather than generic tech SaaS tropes.",
+    "anti_patterns": [
+      "No Inter font for main or sub-headings",
+      "No purple or tech gradients (#7351B7 forbidden)",
+      "No center-everything symmetry",
+      "No generic full-screen backdrop overlays over 50% black",
+      "No transparent dropdown menus or unreadable navigation headers"
+    ]
+  },
+  "typography": {
+    "google_fonts_import": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap",
+    "headings": {
+      "font_family": "'Cormorant Garamond', Georgia, serif",
+      "weights": "500, 700",
+      "letter_spacing": "tracking-tight",
+      "usage": "H1 Hero, Section Titles, Large Statement Numbers, Editorial Headlines"
+    },
+    "body": {
+      "font_family": "'Plus Jakarta Sans', system-ui, sans-serif",
+      "weights": "400, 500, 600, 700",
+      "line_height": "leading-relaxed",
+      "usage": "Paragraphs, Service tier descriptions, Contact details, Form fields, Badges"
+    },
+    "accent_mono": {
+      "font_family": "'JetBrains Mono', monospace",
+      "weights": "500, 600",
+      "letter_spacing": "tracking-[0.15em]",
+      "casing": "uppercase",
+      "usage": "Pricing tags, Acreage indicators, Service area tags, Overlines, Geo-coordinates"
+    },
+    "scale": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight",
+      "h3": "text-xl sm:text-2xl font-semibold leading-snug",
+      "subtitle": "text-lg sm:text-xl text-stone-600 font-normal leading-relaxed",
+      "body": "text-base text-stone-700 leading-relaxed",
+      "small": "text-xs sm:text-sm text-stone-500 uppercase font-mono tracking-wider"
+    }
+  },
+  "color_system": {
+    "css_variables": {
+      "--bg-base": "#F7F5F0",
+      "--bg-surface": "#FFFFFF",
+      "--bg-surface-alt": "#EFECE3",
+      "--bg-dark": "#17261F",
+      "--text-primary": "#1A231E",
+      "--text-muted": "#526057",
+      "--text-light": "#FAF8F5",
+      "--brand-primary": "#1B3B2B",
+      "--brand-hover": "#26523D",
+      "--brand-accent": "#C88A2B",
+      "--brand-accent-light": "#FDF6E2",
+      "--border-subtle": "#E2DDD2",
+      "--border-strong": "#1B3B2B"
+    },
+    "tailwind_palette": {
+      "primary": "#1B3B2B",
+      "primary_hover": "#26523D",
+      "accent": "#C88A2B",
+      "accent_light": "#FDF6E2",
+      "sand_base": "#F7F5F0",
+      "sand_surface": "#FFFFFF",
+      "sand_dark": "#17261F",
+      "stone_dark": "#1A231E",
+      "stone_muted": "#526057",
+      "border_stone": "#E2DDD2"
+    },
+    "contrast_policy": "All body text meets WCAG AA (>= 4.5:1 ratio). Primary CTA uses solid deep forest green (#1B3B2B) with crisp white (#FAF8F5) text or warm golden accent (#C88A2B) on dark panels."
+  },
+  "image_urls": {
+    "hero_background": "https://images.unsplash.com/photo-1597040827713-24d4c7e4b0e2?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "mowing_action": "https://images.unsplash.com/photo-1734303023491-db8037a21f09?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "trimmer_action": "https://images.unsplash.com/photo-1689728318937-17d24bc0a65c?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "lawnmower_detail": "https://images.unsplash.com/photo-1458245201577-fc8a130b8829?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "prairie_landscape": "https://images.unsplash.com/photo-1709217930504-8ed103a0c7f3?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "dewy_grass": "https://images.unsplash.com/photo-1533460004989-cef01064af7e?crop=entropy&cs=srgb&fm=jpg&q=85"
+  },
+  "layout_and_sections": [
+    {
+      "section_id": "header",
+      "name": "Floating Glass & Wood Navigation",
+      "description": "Sticky top bar with glassmorphism backdrop (backdrop-blur-md bg-[#F7F5F0]/85 border-b border-[#E2DDD2]), brand mark 'Jarjus Lawn Care LLC', navigation links, call button, and quote CTA button."
+    },
+    {
+      "section_id": "hero",
+      "name": "Kinetic Hero with Line Reveal & Parallax",
+      "description": "Full-width editorial hero. Headline: 'Agrarian Turf Care Crafted for Central Illinois Grounds.' Masked line-by-line reveal animation using framer-motion, floating stats badge ('3528 E 930 N, Neoga, IL'), and immediate quote trigger button."
+    },
+    {
+      "section_id": "ticker",
+      "name": "Central Illinois Towns Marquee",
+      "description": "Continuous slow-moving editorial ribbon highlighting the 8 core service towns: Neoga, Effingham, Mattoon, Charleston, Toledo, Shumway, Sigel, Montrose IL."
+    },
+    {
+      "section_id": "manifesto",
+      "name": "Numbered Why-Us Agrarian Chapters",
+      "description": "Asymmetric Bento grid detailing Jarjus Lawn Care's local family principles: 01/ Local Ownership, 02/ Precision Edging & Clean Cut Guarantee, 03/ Reliability in Rural Weather."
+    },
+    {
+      "section_id": "services",
+      "name": "Services & 'Starting At' Tiered Pricing",
+      "description": "High-density pricing card matrix with acreage breakdowns: Up to 1/4 acre ($41–$61), 1/4–1/2 acre ($49–$69), 1/2–1 acre ($59–$114). Features interactive lot-size estimator, clear 'Final quotes depend on lot size & condition' disclaimers, and direct 'Get a Quote' action buttons."
+    },
+    {
+      "section_id": "service_area",
+      "name": "Central Illinois Coverage Grid & Interactive Map",
+      "description": "Comprehensive regional coverage section explicitly showcasing Neoga, Effingham, Mattoon, Charleston, Toledo, Shumway, Sigel, and Montrose IL with driving radius badges and quick contact callouts."
+    },
+    {
+      "section_id": "testimonials",
+      "name": "Client Reviews & Google Reviews Link",
+      "description": "Curated quote carousel / grid from local property owners + high-visibility 'Read our reviews' button linking out to Google Business reviews."
+    },
+    {
+      "section_id": "contact_quote",
+      "name": "Contact & Quote Request Panel",
+      "description": "Dual-column layout featuring full address (3528 East 930 North, Neoga, IL 62447), phone link ((217) 294-2346), quick quote form with lot size selector, and emergency lawn care dispatch inquiry."
+    },
+    {
+      "section_id": "footer",
+      "name": "Editorial Footer & Local Business SEO Schema",
+      "description": "Dark forest green footer with large brand typographic mark, full business credentials, navigation map, embedded LocalBusiness JSON-LD schema, and SEO meta compliance."
+    }
+  ],
+  "motion_and_effects": {
+    "smooth_scroll": "Lenis smooth scroll integration for organic physical momentum",
+    "hero_animation": "Line-by-line staggered Y-translation with opacity mask reveal",
+    "scroll_reveal": "Framer Motion initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}",
+    "reduced_motion": "Supported via prefers-reduced-motion fallback disabling heavy transforms"
+  },
+  "seo_and_schema": {
+    "title": "Jarjus Lawn Care LLC | Professional Lawn Care in Neoga, IL & Central Illinois",
+    "meta_description": "Premier lawn care, precision mowing, and yard maintenance in Neoga, Effingham, Mattoon, Charleston, Toledo, Shumway, Sigel, and Montrose IL. Call (217) 294-2346 for custom lot quotes.",
+    "json_ld_schema": {
+      "@context": "https://schema.org",
+      "@type": "LawnCareService",
+      "name": "Jarjus Lawn Care LLC",
+      "image": "https://images.unsplash.com/photo-1597040827713-24d4c7e4b0e2?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "telephone": "(217) 294-2346",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3528 East 930 North",
+        "addressLocality": "Neoga",
+        "addressRegion": "IL",
+        "postalCode": "62447",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.3217,
+        "longitude": -88.4523
+      },
+      "areaServed": [
+        "Neoga, IL",
+        "Effingham, IL",
+        "Mattoon, IL",
+        "Charleston, IL",
+        "Toledo, IL",
+        "Shumway, IL",
+        "Sigel, IL",
+        "Montrose, IL",
+        "Central Illinois"
+      ],
+      "priceRange": "$41 - $114+"
+    }
+  },
+  "testing_and_attributes": {
+    "data_testid_convention": "kebab-case role-based attributes on all interactive elements",
+    "key_test_ids": [
+      "header-brand-logo",
+      "header-nav-services",
+      "header-nav-pricing",
+      "header-nav-service-area",
+      "header-nav-testimonials",
+      "header-call-button",
+      "hero-get-quote-button",
+      "service-card-quarter-acre",
+      "service-card-half-acre",
+      "service-card-one-acre",
+      "pricing-disclaimer-note",
+      "service-area-town-neoga",
+      "service-area-town-effingham",
+      "service-area-town-mattoon",
+      "service-area-town-charleston",
+      "service-area-town-toledo",
+      "service-area-town-shumway",
+      "service-area-town-sigel",
+      "service-area-town-montrose",
+      "read-reviews-google-button",
+      "quote-form-name-input",
+      "quote-form-phone-input",
+      "quote-form-lot-size-select",
+      "quote-form-submit-button",
+      "footer-business-phone",
+      "footer-business-address"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Build a stunning single-page React marketing application at src/App.js with modular component files in src/components/.",
+    "Ensure all pricing lines are prominent: Up to 1/4 acre $41–$61, 1/4–1/2 acre $49–$69, 1/2–1 acre $59–$114, with explicit lot condition disclaimer.",
+    "Implement the Google Reviews button linking to Google Business search for Jarjus Lawn Care.",
+    "Ensure all 8 towns (Neoga, Effingham, Mattoon, Charleston, Toledo, Shumway, Sigel, Montrose) are featured in both marquee and dedicated service area grid.",
+    "Structure the HTML so that full textual content (services, prices, contact, towns, reviews) is rendered in baseline markup for rural slow connections / non-JS visibility.",
+    "Inject the JSON-LD schema into document header or react-helmet/script tag.",
+    "Apply all test-id attributes specified in key_test_ids."
+  ]
+}

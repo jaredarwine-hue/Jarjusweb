@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: 0 0% 100%;
+    --foreground: 150 20% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 150 20% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 20% 12%;
+    --primary: 150 37% 17%;
+    --primary-foreground: 40 33% 97%;
+    --secondary: 40 20% 92%;
+    --secondary-foreground: 150 20% 12%;
+    --muted: 40 20% 92%;
+    --muted-foreground: 150 8% 35%;
+    --accent: 36 65% 48%;
+    --accent-foreground: 40 33% 97%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 18% 85%;
+    --input: 40 18% 85%;
+    --ring: 150 37% 17%;
+    --radius: 0.5rem;
+}
+
+* {
+    border-color: hsl(var(--border));
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #F7F5F0;
+    color: #1A231E;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background: #1B3B2B;
+    color: #FDF6E2;
+}
+
+.font-display {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Paper grain texture overlay */
+.grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 60;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .marquee-track { animation: none; }
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+[data-debug-wrapper="true"] {
+    display: contents !important;
+}
